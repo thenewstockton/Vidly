@@ -8,14 +8,18 @@
 {
     <table class="table">
         <thead>
-            <tr><th>Customer</th></tr>
+            <tr><th>Movie</th><th>Genre</th></tr>
         </thead>
         <tbody>
             @for (int i = 0; i < Model.Movies.Count; i++)
             {
                 <tr>
                     <td>
-                        @Model.Movies[i].Name
+                        @*@Model.Movies[i].Name*@
+                        @Html.ActionLink(Model.Movies[i].Name, "Details", new { id = Model.Movies[i].Id }, null)
+                    </td>
+                    <td>
+                        @Model.Movies[i].Genre.Name
                     </td>
                 </tr>
             }

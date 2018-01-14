@@ -5,22 +5,61 @@ using System.Web;
 using System.Web.Mvc;
 using Vidly.Models;
 using Vidly.ViewModels;
+using System.Data.Entity;
 
 
 namespace Vidly.Controllers
 {
     public class MoviesController : Controller
     {
+        private ApplicationDbContext _context;
+        
+        public MoviesController()
+        {
+            _context = new ApplicationDbContext();
+        }
+
+        protected override void Dispose(bool disposing)
+        {
+            _context.Dispose();
+        }
+
         private List<Movie> _movies = new List<Movie>{
-            new Movie{ Name = "Shrek", Id = 1},
-            new Movie{ Name = "Wall-e", Id = 2}
+            new Movie{ Name = "Hangover", Id = 1, 
+                Genre = new Genre(){Name="Comedy", ReleaseDate = new DateTime(2009,11, 6), DateAdded = new DateTime(2016,5,4), NumberInStock = 5}
+            },
+            new Movie{ Name = "Die Hard", Id = 2, 
+                Genre = new Genre(){Name="Action", ReleaseDate = new DateTime(1988,7, 12), DateAdded = new DateTime(2015,11,22), NumberInStock = 11}
+            },
+            new Movie{ Name = "The Terminator", Id = 3, 
+                Genre = new Genre(){Name="Action", ReleaseDate = new DateTime(1985,3, 29), DateAdded = new DateTime(2014,4,8), NumberInStock = 0}
+            },
+            new Movie{ Name = "Toy Story", Id = 4, 
+                Genre = new Genre(){Name="Family", ReleaseDate = new DateTime(1995,11, 19), DateAdded = new DateTime(2013,1,5), NumberInStock = 55}
+            },
+            new Movie{ Name = "Titanic", Id = 5, 
+                Genre = new Genre(){Name="Romance", ReleaseDate = new DateTime(1997,12, 20), DateAdded = new DateTime(2012,12,12), NumberInStock = 100}
+            }
         };
 
         public ActionResult Index()
         {
             MoviesViewModel viewModel = new MoviesViewModel{
-                Movies = _movies
+                Movies = GetMovies()
             };
+            return View(viewModel);
+        }
+
+        private List<Movie> GetMovies()
+        {
+            //return _movies;
+            return _context.Movies.Include(x => x.Genre).ToList();
+        }
+
+        public ActionResult Details(int id)
+        {
+            var viewModel = GetMovies().Where(x => x.Id == id).FirstOrDefault();
+            if (viewModel == null) return HttpNotFound();
             return View(viewModel);
         }
 
