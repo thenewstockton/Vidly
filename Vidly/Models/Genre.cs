@@ -11,9 +11,7 @@ namespace Vidly.Models
         public byte Id { get; set; }
         [Required]
         [StringLength(255)]
+        [Display(Name = "Genre")]
         public string Name { get; set; }
-        public DateTime ReleaseDate { get; set; }
-        public DateTime DateAdded { get; set; }
-        public int NumberInStock { get; set; }
     }
 }

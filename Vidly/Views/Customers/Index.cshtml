@@ -20,7 +20,7 @@
             {
                 <tr>
                     <td>
-                        @Html.ActionLink(@Model.Customers[i].Name, "Details", "Customers", new { id = @Model.Customers[i].Id }, null)
+                        @Html.ActionLink(@Model.Customers[i].Name, "Edit", "Customers", new { id = @Model.Customers[i].Id }, null)
                     </td>
                     <td>
                         @Model.Customers[i].MembershipType.DiscountRate %

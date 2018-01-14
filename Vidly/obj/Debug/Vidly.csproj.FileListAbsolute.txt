@@ -73,3 +73,6 @@ c:\Projects\Vidly\Vidly\obj\Debug\Vidly.Migrations.MakeMovieNameNotNullable.reso
 c:\Projects\Vidly\Vidly\obj\Debug\Vidly.Migrations.MakeGenreNameNotNullable.resources
 c:\Projects\Vidly\Vidly\obj\Debug\Vidly.Migrations.PopulateGenreData.resources
 c:\Projects\Vidly\Vidly\obj\Debug\Vidly.Migrations.PopulateMoviesData.resources
+c:\Projects\Vidly\Vidly\obj\Debug\Vidly.Migrations.ChangeGenreAndMovie.resources
+c:\Projects\Vidly\Vidly\obj\Debug\Vidly.Migrations.UpdateMoviesData.resources
+c:\Projects\Vidly\Vidly\obj\Debug\Vidly.Migrations.recoverHangover.resources

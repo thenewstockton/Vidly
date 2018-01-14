@@ -242,6 +242,18 @@
     <Compile Include="Migrations\201801140947285_PopulateMoviesData.Designer.cs">
       <DependentUpon>201801140947285_PopulateMoviesData.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201801141227098_ChangeGenreAndMovie.cs" />
+    <Compile Include="Migrations\201801141227098_ChangeGenreAndMovie.Designer.cs">
+      <DependentUpon>201801141227098_ChangeGenreAndMovie.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201801141228450_UpdateMoviesData.cs" />
+    <Compile Include="Migrations\201801141228450_UpdateMoviesData.Designer.cs">
+      <DependentUpon>201801141228450_UpdateMoviesData.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201801141245046_recoverHangover.cs" />
+    <Compile Include="Migrations\201801141245046_recoverHangover.Designer.cs">
+      <DependentUpon>201801141245046_recoverHangover.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Customer.cs" />
@@ -253,7 +265,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
     <Compile Include="ViewModels\CustomersViewModel.cs" />
+    <Compile Include="ViewModels\MovieFormViewModel.cs" />
     <Compile Include="ViewModels\MoviesViewModel.cs" />
+    <Compile Include="ViewModels\NewCustomerViewModel.cs" />
     <Compile Include="ViewModels\RandomMovieViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -321,6 +335,8 @@
     <Content Include="Views\Customers\Details.cshtml" />
     <Content Include="Views\Movies\Index.cshtml" />
     <Content Include="Views\Movies\Details.cshtml" />
+    <Content Include="Views\Customers\CustomerForm.cshtml" />
+    <Content Include="Views\Movies\MovieForm.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -389,6 +405,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201801140947285_PopulateMoviesData.resx">
       <DependentUpon>201801140947285_PopulateMoviesData.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201801141227098_ChangeGenreAndMovie.resx">
+      <DependentUpon>201801141227098_ChangeGenreAndMovie.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201801141228450_UpdateMoviesData.resx">
+      <DependentUpon>201801141228450_UpdateMoviesData.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201801141245046_recoverHangover.resx">
+      <DependentUpon>201801141245046_recoverHangover.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
