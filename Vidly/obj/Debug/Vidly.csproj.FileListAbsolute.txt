@@ -50,7 +50,6 @@ c:\Projects\Vidly\Vidly\bin\Microsoft.Owin.Security.OAuth.xml
 c:\Projects\Vidly\Vidly\bin\Microsoft.Owin.Security.Google.xml
 c:\Projects\Vidly\Vidly\bin\Microsoft.Owin.Security.Twitter.xml
 c:\Projects\Vidly\Vidly\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
-c:\Projects\Vidly\Vidly\obj\Debug\Vidly.csprojResolveAssemblyReference.cache
 c:\Projects\Vidly\Vidly\obj\Debug\Vidly.dll
 c:\Projects\Vidly\Vidly\obj\Debug\Vidly.pdb
 c:\Projects\Vidly\Vidly\obj\Debug\Vidly.Migrations.InitialModel.resources

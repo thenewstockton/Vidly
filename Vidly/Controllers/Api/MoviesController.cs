@@ -24,22 +24,23 @@ namespace Vidly.Controllers.Api
         //public IEnumerable<MovieDto> GetMovies()
         public IEnumerable<MovieDto> GetMovies()
         {
-            List<Movie> movies = _context.Movies.ToList();
-            List<MovieDto> movieDtos = new List<MovieDto>();
-            for (int i = 0; i < movies.Count; i++)
-            {
-                MovieDto movieDto = new MovieDto();
+            //List<Movie> movies = _context.Movies.ToList();
+            //List<MovieDto> movieDtos = new List<MovieDto>();
+            //for (int i = 0; i < movies.Count; i++)
+            //{
+            //    MovieDto movieDto = new MovieDto();
 
-                movieDto.GenreId = movies[i].GenreId;
-                movieDto.Id = movies[i].Id;
-                movieDto.Name = movies[i].Name;
-                movieDto.NumberInStock = movies[i].NumberInStock;
-                movieDto.ReleaseDate = movies[i].ReleaseDate;
+            //    movieDto.GenreId = movies[i].GenreId;
+            //    movieDto.Id = movies[i].Id;
+            //    movieDto.Name = movies[i].Name;
+            //    movieDto.NumberInStock = movies[i].NumberInStock;
+            //    movieDto.ReleaseDate = movies[i].ReleaseDate;
+                
+            //    movieDtos.Add(movieDto);
+            //}
 
-                movieDtos.Add(movieDto);
-            }
-
-            return movieDtos;
+            //return movieDtos;
+            return _context.Movies.ToList().Select(Mapper.Map<Movie, MovieDto>);
         }
 
         //GET /api/movies/1
@@ -55,6 +56,15 @@ namespace Vidly.Controllers.Api
             return Ok(movie);
         }
 
+ /*       test Data: 
+{
+    "Id": 0,
+    "Name": "Test1",
+    "NumberInStock": 11,
+    "GenreId": 2,
+    "ReleaseDate": "1981-01-01"
+}
+        */
         //POST /api/customers
         [HttpPost]
         public MovieDto CreateMovie(MovieDto movieDto)
@@ -64,13 +74,13 @@ namespace Vidly.Controllers.Api
                 throw new HttpResponseException(HttpStatusCode.BadRequest);
             }
             Movie movie = new Movie();
-            movie.Id = movieDto.Id;
-            movie.Name = movieDto.Name;
-            movie.NumberInStock = movieDto.NumberInStock;
-            movie.GenreId = movieDto.GenreId;
-            movie.ReleaseDate = movieDto.ReleaseDate;
+            //movie.Id = movieDto.Id;
+            //movie.Name = movieDto.Name;
+            //movie.NumberInStock = movieDto.NumberInStock;
+            //movie.GenreId = movieDto.GenreId;
+            //movie.ReleaseDate = movieDto.ReleaseDate;
+            movie = Mapper.Map<MovieDto, Movie>(movieDto);
             movie.DateAdded = DateTime.Now;
-            
             _context.Movies.Add(movie);
             _context.SaveChanges();
 
@@ -89,10 +99,12 @@ namespace Vidly.Controllers.Api
             if (movieInDb == null)
                 throw new HttpResponseException(HttpStatusCode.NotFound);
 
-            movieInDb.Name = movieDto.Name;
-            movieInDb.NumberInStock = movieDto.NumberInStock;
-            movieInDb.GenreId = movieDto.GenreId;
-            movieInDb.ReleaseDate = movieDto.ReleaseDate;
+
+            //movieInDb.Name = movieDto.Name;
+            //movieInDb.NumberInStock = movieDto.NumberInStock;
+            //movieInDb.GenreId = movieDto.GenreId;
+            //movieInDb.ReleaseDate = movieDto.ReleaseDate;
+            Mapper.Map<MovieDto, Movie>(movieDto, movieInDb);
             movieInDb.DateAdded = DateTime.Now;
 
             _context.SaveChanges();
