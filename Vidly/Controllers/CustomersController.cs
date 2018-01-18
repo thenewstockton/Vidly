@@ -90,11 +90,17 @@ namespace Vidly.Controllers
         // GET: Customers
         public ActionResult Index()
         {
-            var viewModel = new CustomersViewModel
+            bool useVm = false;
+            if (useVm)
             {
-                Customers = GetCustomers()
-            };
-            return View(viewModel);
+                var viewModel = new CustomersViewModel
+                {
+                    Customers = GetCustomers()
+                };
+                return View("IndexVM", viewModel);
+            }
+            
+            return View();
         }
 
         private List<Customer> GetCustomers()

@@ -44,10 +44,16 @@ namespace Vidly.Controllers
 
         public ActionResult Index()
         {
-            MoviesViewModel viewModel = new MoviesViewModel{
-                Movies = GetMovies()
-            };
-            return View(viewModel);
+            bool useVm = false;
+            if (useVm)
+            {
+                MoviesViewModel viewModel = new MoviesViewModel
+                {
+                    Movies = GetMovies()
+                };
+                return View("IndexVM", viewModel);
+            }
+            return View();
         }
 
         private List<Movie> GetMovies()
