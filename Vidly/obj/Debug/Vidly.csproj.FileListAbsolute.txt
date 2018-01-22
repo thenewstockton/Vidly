@@ -170,3 +170,5 @@ D:\github\thenewstockton\Vidly\Vidly\obj\Debug\Vidly.Migrations.recoverHangover.
 D:\github\thenewstockton\Vidly\Vidly\obj\Debug\Vidly.csproj.GenerateResource.Cache
 D:\github\thenewstockton\Vidly\Vidly\obj\Debug\Vidly.dll
 D:\github\thenewstockton\Vidly\Vidly\obj\Debug\Vidly.pdb
+D:\github\thenewstockton\Vidly\Vidly\obj\Debug\Vidly.Migrations.SeedUsers.resources
+D:\github\thenewstockton\Vidly\Vidly\obj\Debug\Vidly.Migrations.AddDrivingLicense.resources
