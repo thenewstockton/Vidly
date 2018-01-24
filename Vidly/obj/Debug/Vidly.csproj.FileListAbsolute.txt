@@ -180,3 +180,4 @@ D:\github\thenewstockton\Vidly\Vidly\bin\Glimpse.Mvc5.dll
 D:\github\thenewstockton\Vidly\Vidly\obj\Debug\Vidly.Migrations.addRentals.resources
 D:\github\thenewstockton\Vidly\Vidly\obj\Debug\Vidly.Migrations.addNumberAvailable.resources
 D:\github\thenewstockton\Vidly\Vidly\bin\Elmah.dll
+D:\github\thenewstockton\Vidly\Vidly\obj\Debug\Vidly.Migrations.TestMigration.resources
