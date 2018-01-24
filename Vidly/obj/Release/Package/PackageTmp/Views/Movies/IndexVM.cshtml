@@ -1,0 +1,33 @@
+﻿@model Vidly.ViewModels.MoviesViewModel
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<h1>Movies</h1>
+@Html.ActionLink("New Movie", "New", "Movies", new { @class = "btn btn-primary glyphicon glyphicon-plus-sign" })
+@if (Model.Movies.Count > 0)
+{
+    <table class="table">
+        <thead>
+            <tr><th>Movie</th><th>Genre</th></tr>
+        </thead>
+        <tbody>
+            @for (int i = 0; i < Model.Movies.Count; i++)
+            {
+                <tr>
+                    <td>
+                        @*@Model.Movies[i].Name*@
+                        @Html.ActionLink(Model.Movies[i].Name, "Edit", new { id = Model.Movies[i].Id }, null)
+                    </td>
+                    <td>
+                        @Model.Movies[i].Genre.Name
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <p>We don't have any customers yet.</p>
+}
