@@ -6,7 +6,8 @@ using System.Web.Mvc;
 using Vidly.Models;
 using Vidly.ViewModels;
 using System.Data.Entity;
-
+using System.Runtime;
+using System.Runtime.Caching;
 namespace Vidly.Controllers
 {
     public class CustomersController : Controller
@@ -99,6 +100,13 @@ namespace Vidly.Controllers
                 };
                 return View("IndexVM", viewModel);
             }
+
+            if (MemoryCache.Default["Genres"] == null)
+            {
+                MemoryCache.Default["Genres"] = _context.Genres.ToList();
+            }
+
+            var genres = MemoryCache.Default["Genres"] as IEnumerable<Genre>;
             
             return View();
         }

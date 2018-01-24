@@ -22,6 +22,8 @@ namespace Vidly.Models
         public DateTime DateAdded { get; set; }
         [Range(1, 20)]
         public int NumberInStock { get; set; }
+
+        public byte NumberAvailable { get; set; }
     }
 
     //Movies/random

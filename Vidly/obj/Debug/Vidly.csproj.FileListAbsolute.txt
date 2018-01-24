@@ -172,3 +172,10 @@ D:\github\thenewstockton\Vidly\Vidly\obj\Debug\Vidly.dll
 D:\github\thenewstockton\Vidly\Vidly\obj\Debug\Vidly.pdb
 D:\github\thenewstockton\Vidly\Vidly\obj\Debug\Vidly.Migrations.SeedUsers.resources
 D:\github\thenewstockton\Vidly\Vidly\obj\Debug\Vidly.Migrations.AddDrivingLicense.resources
+D:\github\thenewstockton\Vidly\Vidly\bin\Glimpse.Ado.dll
+D:\github\thenewstockton\Vidly\Vidly\bin\Glimpse.AspNet.dll
+D:\github\thenewstockton\Vidly\Vidly\bin\Glimpse.Core.dll
+D:\github\thenewstockton\Vidly\Vidly\bin\Glimpse.EF6.dll
+D:\github\thenewstockton\Vidly\Vidly\bin\Glimpse.Mvc5.dll
+D:\github\thenewstockton\Vidly\Vidly\obj\Debug\Vidly.Migrations.addRentals.resources
+D:\github\thenewstockton\Vidly\Vidly\obj\Debug\Vidly.Migrations.addNumberAvailable.resources
